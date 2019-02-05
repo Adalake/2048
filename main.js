@@ -2,6 +2,7 @@ var board=new Array();
 
 $(document).ready(function(){
 	newgame();
+	score();
 });
 
 function newgame(){
@@ -125,6 +126,7 @@ function moveLeft(){
 				else if(board[i][k]==board[i][j] && noBlockHorizontal(i,k,j,board)){
 					showMoveAnimation(i,j,i,k);
 					board[i][k] += board[i][j];
+					/*此处加一个不成熟的计数函数*/ score(board);
 					board[i][j]=0;
 				}
 			}
@@ -152,6 +154,7 @@ function moveUp(){
 				else if(board[k][j]==board[i][j] && noBlockHorizontal(i,k,j,board)){
 					showMoveAnimation(i,j,i,k);
 					board[k][j] += board[i][j];
+					/*此处加一个不成熟的计数函数*/ score(board);
 					board[i][j]=0;
 				}
 			}
@@ -179,6 +182,7 @@ function moveRight(){
 				else if(board[i][k]==board[i][j] && noBlockHorizontal(i,k,j,board)){
 					showMoveAnimation(i,j,i,k);
 					board[i][k] += board[i][j];
+					/*此处加一个不成熟的计数函数*/ score(board);
 					board[i][j]=0;
 				}
 			}
@@ -206,6 +210,7 @@ function moveDown(){
 				else if(board[k][j]==board[i][j] && noBlockHorizontal(i,k,j,board)){
 					showMoveAnimation(i,j,i,k);
 					board[k][j] += board[i][j];
+					/*此处加一个不成熟的计数函数*/ score(board);
 					board[i][j]=0;
 				}
 			}
