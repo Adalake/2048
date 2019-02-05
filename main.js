@@ -104,7 +104,7 @@ function isgameover(){
 }
 
 
-function gamover(){
+function gameover(){
 	alert("gameover");
 }
 
