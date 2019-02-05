@@ -96,4 +96,30 @@ function nomove(board){
 	return true;	 
 }
 
-
+/*向上移动*/
+function canMoveUp(board){
+	for (var i=1; i<4; i++)
+	for (var j=0; j<4; j++)
+	if (board[i][j]!=0)
+	if( board[i-1][j] == 0 || board[i-1][j] == board[i][j])
+	return true;
+	return false;
+}
+/*向右移动*/
+function canMoveRight(board){
+	for (var i=0; i<4; i++)
+	for (var j=0; j<3; j++)
+	if (board[i][j]!=0)
+	if( board[i][j+1] == 0 || board[i][j+1] == board[i][j])
+	return true;
+	return false;
+}
+/*向下移动*/
+function canMoveDown(board){
+	for (var i=0; i<3; i++)
+	for (var j=0; j<4; j++)
+	if (board[i][j]!=0)
+	if( board[i+1][j] == 0 || board[i+1][j] == board[i][j])
+	return true;
+	return false;
+}
