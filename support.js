@@ -123,3 +123,36 @@ function canMoveDown(board){
 	return true;
 	return false;
 }
+/*此处是一个简陋的计分函数*/
+function score(board){
+	var score=$("#score");
+	for (var i=0; i<4; i++){
+	for (var j=0; j<4; j++){
+	if (board[i][j]==4){
+	return score.text("恭喜加4分");	
+	}if (board[i][j]==8){
+	return score.text("恭喜加8分");
+	}if (board[i][j]==16){
+	return score.text("恭喜加16分");	
+	}if (board[i][j]==32){
+	return score.text("恭喜加32分");
+	}if (board[i][j]==64){
+	return score.text("恭喜加64分");	
+	}if (board[i][j]==128){
+	return score.text("恭喜加128分");
+	}if (board[i][j]==256){
+	return score.text("恭喜加256分");	
+	}if (board[i][j]==512){
+	return score.text("恭喜加512分");
+	}if (board[i][j]==1024){
+	return score.text("恭喜加1024分");	
+	}if (board[i][j]==2048){
+	return score.text("恭喜加2048分");
+	}if (board[i][j]==4096){
+	return score.text("恭喜加4096分");	
+	}if (board[i][j]==8192){
+	return score.text("恭喜加8192分");
+	}
+	}
+	}
+}
