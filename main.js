@@ -135,3 +135,84 @@ function moveLeft(){
 setTimeout("updateBoardView()",200);
 	return true;
 }
+/*向上移动*/
+function moveUp(){
+	if (!canMoveUp(board)){      /* canMoveUp(board)*/
+	return false;
+	}
+	for (var i=1; i<4; i++){	
+	for (var j=0; j<4; j++){
+		if (board[i][j]!=0){
+			for (var k=0; k<i; k++){
+				if (board[k][j]==0 && noBlockHorizontal(i,k,j,board)){
+					showMoveAnimation(i,j,i,k);
+					board[k][j]=board[i][j];
+					board[i][j]=0;
+				}
+				else if(board[k][j]==board[i][j] && noBlockHorizontal(i,k,j,board)){
+					showMoveAnimation(i,j,i,k);
+					board[k][j] += board[i][j];
+					board[i][j]=0;
+				}
+			}
+			
+		}
+	}
+	}
+setTimeout("updateBoardView()",200);
+	return true;
+}
+/*向右移动*/
+function moveRight(){
+	if (!canMoveRight(board)){      /* canMoveRight(board)*/
+	return false;
+	}
+	for (var i=0; i<4; i++){	
+	for (var j=0; j<3; j++){
+		if (board[i][j]!=0){
+			for (var k=0; k<j; k++){
+				if (board[i][k]==0 && noBlockHorizontal(i,k,j,board)){
+					showMoveAnimation(i,j,i,k);
+					board[i][k]=board[i][j];
+					board[i][j]=0;
+				}
+				else if(board[i][k]==board[i][j] && noBlockHorizontal(i,k,j,board)){
+					showMoveAnimation(i,j,i,k);
+					board[i][k] += board[i][j];
+					board[i][j]=0;
+				}
+			}
+			
+		}
+	}
+	}
+setTimeout("updateBoardView()",200);
+	return true;
+}
+/*向下移动*/
+function moveDown(){
+	if (!canMoveDown(board)){      /* canMoveDown(board)*/
+	return false;
+	}
+	for (var i=0; i<3; i++){	
+	for (var j=0; j<4; j++){
+		if (board[i][j]!=0){
+			for (var k=0; k<i; k++){
+				if (board[k][j]==0 && noBlockHorizontal(i,k,j,board)){
+					showMoveAnimation(i,j,i,k);
+					board[k][j]=board[i][j];
+					board[i][j]=0;
+				}
+				else if(board[k][j]==board[i][j] && noBlockHorizontal(i,k,j,board)){
+					showMoveAnimation(i,j,i,k);
+					board[k][j] += board[i][j];
+					board[i][j]=0;
+				}
+			}
+			
+		}
+	}
+	}
+setTimeout("updateBoardView()",200);
+	return true;
+}
